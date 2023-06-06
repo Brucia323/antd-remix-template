@@ -1,16 +1,24 @@
-import { StyleProvider } from "@ant-design/cssinjs";
-import type { V2_MetaFunction } from "@remix-run/node";
-import { Button } from "antd";
+import type { V2_MetaFunction } from '@remix-run/node';
+import { Layout } from 'antd';
 
 export const meta: V2_MetaFunction = () => {
   return [
-    { title: "New Remix App" },
-    { name: "description", content: "Welcome to Remix!" },
+    { title: 'New Remix App' },
+    { name: 'description', content: 'Welcome to Remix!' },
   ];
 };
 
 export default function Index() {
   return (
-      <Button>登录</Button>
+    <Layout style={{ minHeight: '100vh' }}>
+      <Layout.Header></Layout.Header>
+      <Layout>
+        <Layout.Sider theme="light"></Layout.Sider>
+        <Layout>
+          <Layout.Content></Layout.Content>
+          <Layout.Footer>Ant Design 5.x + Remix 1.x</Layout.Footer>
+        </Layout>
+      </Layout>
+    </Layout>
   );
 }
