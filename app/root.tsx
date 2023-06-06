@@ -23,7 +23,7 @@ export default function App() {
         <Links />
         {typeof document === 'undefined' ? '__antd__' : ''}
       </head>
-      <body>
+      <body style={{ margin: 0 }}>
         <Outlet />
         <ScrollRestoration />
         <Scripts />
