@@ -1,5 +1,5 @@
 import type { V2_MetaFunction } from '@remix-run/node';
-import { Layout } from 'antd';
+import { Layout, theme } from 'antd';
 
 export const meta: V2_MetaFunction = () => {
   return [
@@ -9,9 +9,15 @@ export const meta: V2_MetaFunction = () => {
 };
 
 export default function Index() {
+  const {
+    token: { colorBgContainer },
+  } = theme.useToken();
+
   return (
     <Layout style={{ minHeight: '100vh' }}>
-      <Layout.Header></Layout.Header>
+      <Layout.Header
+        style={{ backgroundColor: colorBgContainer }}
+      ></Layout.Header>
       <Layout>
         <Layout.Sider theme="light"></Layout.Sider>
         <Layout>
