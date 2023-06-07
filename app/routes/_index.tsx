@@ -1,5 +1,5 @@
 import type { V2_MetaFunction } from '@remix-run/node';
-import { Layout, theme } from 'antd';
+import { Card, Layout, theme } from 'antd';
 
 export const meta: V2_MetaFunction = () => {
   return [
@@ -21,7 +21,9 @@ export default function Index() {
       <Layout>
         <Layout.Sider theme="light"></Layout.Sider>
         <Layout>
-          <Layout.Content></Layout.Content>
+          <Layout.Content>
+            <Card bordered={false} loading={true} style={{ margin: 24 }}></Card>
+          </Layout.Content>
           <Layout.Footer>Ant Design 5.x + Remix 1.x</Layout.Footer>
         </Layout>
       </Layout>
