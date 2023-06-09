@@ -1,5 +1,6 @@
+import DashboardOutlined from '@ant-design/icons';
 import type { V2_MetaFunction } from '@remix-run/node';
-import { Card, Layout, theme } from 'antd';
+import { Button, Card, Col, Dropdown, Layout, Menu, Row, theme } from 'antd';
 
 export const meta: V2_MetaFunction = () => {
   return [
@@ -15,11 +16,34 @@ export default function Index() {
 
   return (
     <Layout style={{ minHeight: '100vh' }}>
-      <Layout.Header
-        style={{ backgroundColor: colorBgContainer }}
-      ></Layout.Header>
+      <Layout.Header style={{ backgroundColor: colorBgContainer }}>
+        <Row justify="end">
+          <Col>
+            <Dropdown
+              menu={{
+                items: [{ key: 'signout', label: '退出', title: '退出' }],
+              }}
+            >
+              <Button type="text">用户名</Button>
+            </Dropdown>
+          </Col>
+        </Row>
+      </Layout.Header>
       <Layout>
-        <Layout.Sider theme="light"></Layout.Sider>
+        <Layout.Sider theme="light">
+          <Menu
+            defaultSelectedKeys={['dashboard']}
+            items={[
+              {
+                icon: <DashboardOutlined />,
+                key: 'dashboard',
+                label: '首页',
+                title: '首页',
+              },
+            ]}
+            mode="inline"
+          />
+        </Layout.Sider>
         <Layout>
           <Layout.Content>
             <Card bordered={false} loading={true} style={{ margin: 24 }}></Card>
