@@ -54,7 +54,6 @@ export default function Index() {
     token: {
       colorBgLayout,
       paddingMD,
-      colorBorderSecondary,
       fontSizeXL,
       colorFill,
       padding,
