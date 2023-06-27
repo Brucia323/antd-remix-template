@@ -8,6 +8,7 @@ import {
   Scripts,
   ScrollRestoration,
 } from '@remix-run/react';
+import 'antd/dist/reset.css';
 
 export const links: LinksFunction = () => [
   ...(cssBundleHref ? [{ rel: 'stylesheet', href: cssBundleHref }] : []),
@@ -23,7 +24,7 @@ export default function App() {
         <Links />
         {typeof document === 'undefined' ? '__antd__' : ''}
       </head>
-      <body style={{ margin: 0 }}>
+      <body>
         <Outlet />
         <ScrollRestoration />
         <Scripts />
