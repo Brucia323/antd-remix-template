@@ -61,7 +61,7 @@ export default function Index() {
   } = theme.useToken();
 
   return (
-    <Layout style={{ minHeight: '100vh' }}>
+    <Layout>
       <Layout.Header style={{ backgroundColor: colorBgLayout }}>
         <Row justify="space-between">
           <Col style={{ margin: 'auto 0' }}>
